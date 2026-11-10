@@ -157,6 +157,7 @@ int main() {
 	Magnetic_Field M_components(randNum(), randNum(), randNum());
 	
 	//Prints default electric field
+	cout << "~~~~~~~~~~" << endl;
 	cout << "Default electric field:" << endl;
 	cout << "x: " << E_default.getX() << endl
 		<< "y: " << E_default.getY() << endl
@@ -166,25 +167,64 @@ int main() {
 	E_default.setX(randNum());
 	E_default.setY(randNum());
 	E_default.setZ(randNum());
+	cout << "~~~~~~~~~~" << endl;
 	cout << "Default electric field post-set:" << endl;
 	cout << "x: " << E_default.getX() << endl
 		<< "y: " << E_default.getY() << endl
 		<< "z: " << E_default.getZ() << endl;
 	
 	//Prints preset electic field
+	cout << "~~~~~~~~~~" << endl;
 	cout << "Preset electric field:" << endl;
 	cout << "x: " << E_components.getX() << endl
 		<< "y: " << E_components.getY() << endl
 		<< "z: " << E_components.getZ() << endl;
 	
 	//Prints preset electric field magnitude
+	cout << "~~~~~~~~~~" << endl;
 	cout << "Preset electric field magnitude:" << endl;
 	cout << E_components.calcMagnitude() << endl;
 	
 	//Prints preset electric field inner product
+	cout << "~~~~~~~~~~" << endl;
 	cout << "Preset electric field inner product:" << endl;
 	cout << E_components.innerProduct() << endl;
+	
+	//Prints default magnetic field
+	cout << "~~~~~~~~~~" << endl;
+	cout << "Default magnetic field:" << endl;
+	cout << "x: " << E_default.getX() << endl
+		<< "y: " << E_default.getY() << endl
+		<< "z: " << E_default.getZ() << endl;
+	
+	//Sets default magnetic field to new values, then prints again
+	M_default.setXYZ(randNum(), randNum(), randNum());
+	cout << "~~~~~~~~~~" << endl;
+	cout << "Default magnetic field post-set:" << endl;
+	cout << "x: " << M_default.getX() << endl
+		<< "y: " << M_default.getY() << endl
+		<< "z: " << M_default.getZ() << endl;
+	
+	//Prints preset magnetic field
+	cout << "~~~~~~~~~~" << endl;
+	cout << "Preset magnetic field:" << endl;
+	cout << "x: " << M_components.getX() << endl
+		<< "y: " << M_components.getY() << endl
+		<< "z: " << M_components.getZ() << endl;
+	
+	//Prints preset magnetic field magnitude
+	cout << "~~~~~~~~~~" << endl;
+	cout << "Preset magnetic field magnitude:" << endl;
+	cout << M_components.calcMagnitude() << endl;
 
+	//Prints preset magnetic field's unit vectors
+	cout << "~~~~~~~~~~" << endl;
+	cout << "Preset magnetic field unit vector:\n" << endl;
+	cout << "x unit vector: " << M_components.unitX() << endl
+		<< "y unit vector: " << M_components.unitY() << endl
+		<< "z unit vector: " << M_components.unitZ() << endl;
+
+	//Code done waaaw yay yippee wahoo
 	return 0;
 
 }
