@@ -193,9 +193,9 @@ int main() {
 	//Prints default magnetic field
 	cout << "~~~~~~~~~~" << endl;
 	cout << "Default magnetic field:" << endl;
-	cout << "x: " << E_default.getX() << endl
-		<< "y: " << E_default.getY() << endl
-		<< "z: " << E_default.getZ() << endl;
+	cout << "x: " << M_default.getX() << endl
+		<< "y: " << M_default.getY() << endl
+		<< "z: " << M_default.getZ() << endl;
 	
 	//Sets default magnetic field to new values, then prints again
 	M_default.setXYZ(randNum(), randNum(), randNum());
