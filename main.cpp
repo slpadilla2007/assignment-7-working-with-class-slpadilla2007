@@ -219,7 +219,7 @@ int main() {
 
 	//Prints preset magnetic field's unit vectors
 	cout << "~~~~~~~~~~" << endl;
-	cout << "Preset magnetic field unit vector:\n" << endl;
+	cout << "Preset magnetic field unit vector:" << endl;
 	cout << "x unit vector: " << M_components.unitX() << endl
 		<< "y unit vector: " << M_components.unitY() << endl
 		<< "z unit vector: " << M_components.unitZ() << endl;
