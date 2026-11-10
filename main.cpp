@@ -1,8 +1,16 @@
 #include <iostream>
 #include <cstdlib>
+#include <ctime>
 #include <cmath>
 
 using namespace std;
+
+//Made so I don't have to rewrite this over and over
+double randNum() {
+
+	return rand() % 101;
+
+}
 
 class Electric_Field {
 
@@ -125,20 +133,58 @@ class Magnetic_Field {
 		//Unit vector funcs
 		double unitX() {
 			//x divided by magnitude
-			return (E[0]/calcMagnitude());
+			return (M[0]/calcMagnitude());
 		}
 		double unitY() {
-			return (E[1]/calcMagnitude());
+			//y divided by magnitude
+			return (M[1]/calcMagnitude());
 		}
 		double unitZ() {
-			return (E[2]/calcMagnitude());
+			//z divided by magnitude
+			return (M[2]/calcMagnitude());
 		}
 
 };
 
 int main() {
+	
+	srand(time(0));
 
-	//Code will go here
+	//Makes all needed electric and magnetic fields
+	Electric_Field E_default;
+	Electric_Field E_components(randNum(), randNum(), randNum());
+	Magnetic_Field M_default;
+	Magnetic_Field M_components(randNum(), randNum(), randNum());
+	
+	//Prints default electric field
+	cout << "Default electric field:" << endl;
+	cout << "x: " << E_default.getX() << endl
+		<< "y: " << E_default.getY() << endl
+		<< "z: " << E_default.getZ() << endl;
+	
+	//Sets default electric field to new values, then prints again
+	E_default.setX(randNum());
+	E_default.setY(randNum());
+	E_default.setZ(randNum());
+	cout << "Default electric field post-set:" << endl;
+	cout << "x: " << E_default.getX() << endl
+		<< "y: " << E_default.getY() << endl
+		<< "z: " << E_default.getZ() << endl;
+	
+	//Prints preset electic field
+	cout << "Preset electric field:" << endl;
+	cout << "x: " << E_components.getX() << endl
+		<< "y: " << E_components.getY() << endl
+		<< "z: " << E_components.getZ() << endl;
+	
+	//Prints preset electric field magnitude
+	cout << "Preset electric field magnitude:" << endl;
+	cout << E_components.calcMagnitude() << endl;
+	
+	//Prints preset electric field inner product
+	cout << "Preset electric field inner product:" << endl;
+	cout << E_components.innerProduct() << endl;
+
 	return 0;
 
 }
